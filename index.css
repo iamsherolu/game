@@ -74,8 +74,6 @@ body{
     margin: 0px auto;
     width: 100%;
     max-width: 500px;
-    display: grid;
-    grid-template-columns: auto;
 }
 .level:hover{
     background-color: beige;
