@@ -1,0 +1,175 @@
+body{
+     margin: 0; 
+     padding: 0; 
+}
+@media (max-width:768px) {
+    .nav_btn{
+        display: none;
+    }
+}
+.topnav{
+    margin: 0;
+    padding: 20px;
+}
+.logo{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 35px;
+    cursor: pointer;
+    color: brown;
+}
+.nav_btn{
+    cursor: pointer;
+    float: right;
+    color: 	#D9B3B3;
+    text-align: center;
+    width: 120px;
+}
+.nav_btn:hover{
+    color: 	#AD5A5A;
+    border-bottom:1px solid	#AD5A5A ;
+}
+.hidden{
+    display: none;
+}
+
+/* 終極密碼 */
+#div_game{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.game_info{
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: gainsboro;    
+    border-radius: 10px;
+}
+.title{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.container_code{
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0px auto;
+}
+.level{
+    background-color: #D2E9FF;
+    color: 	#003060;
+    border-radius: 15px;
+    box-shadow: 5px 5px 3px gray;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Rajdhani', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+.level_layout{
+    margin: 0px auto;
+    width: 100%;
+    max-width: 320px;
+    display: grid;
+    grid-template-columns: auto;
+}
+.level:hover{
+    background-color: beige;
+    color: #AD5A5A;
+}
+#show_level{
+    color: 	#28004D;
+    border-radius: 15px;
+    padding: 20px 0px;
+    width: 100%;
+    max-width: 500px;
+}
+#guess_num{
+    width: 200px;
+    height: 50px;
+    padding: 15px;
+    border: 1px solid 	#E6CAFF;
+    border-radius: 20px;
+    outline: none;
+    display: inline;
+}
+.enter{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F1E1FF;
+}
+.enter:hover{
+    background: #E1C4C4;
+}
+.result{
+    margin-top: 5px;
+    color: red;
+    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    display: none;
+}
+#count{
+    margin: 20px 0px;
+    color:#6A6AFF;
+    font-size: 18px;
+    font-weight: 600;
+}
+.reset{
+    background-color: #F1E1FF;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    display: none;
+    max-width: 200px;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    transform: translateX(-10%);
+}
+.reset:hover{
+    background-color: #D2E9FF;
+    box-shadow: 5px 5px 3px gray;
+}
+.change{
+    background-color: #F1E1FF;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    display: none;
+    max-width: 200px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    transform: translateX(10%);
+}
+.change:hover{
+    background-color: #D2E9FF;
+    box-shadow: 5px 5px 3px gray;
+}
+.user{
+    display: none;
+    width: 100%;
+    max-width: 500px;
+}
+#info_layout{
+    background-color:	#FFF4C1;
+    border-radius: 15px;
+    display: none;
+    text-align: center;
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+    height: 300px;
+    margin: 0px auto;
+}
