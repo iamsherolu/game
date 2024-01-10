@@ -16,9 +16,18 @@
 </head>
 <body>
     <div class="topnav">
-        <span class="logo" onclick="location.href='index.html'">Diversion Topia</span>
+        <span class="logo" onclick="showDiv('_index')" id="btn_index">Diversion Topia</span>
+        <span class="nav_btn" onclick="showDiv('_ooxx')" id="btn_ooxx">ooxx</span>
+        <span class="nav_btn" onclick="showDiv('_pss')" id="btn_pss">剪刀石頭布</span>
+        <span class="nav_btn" onclick="showDiv('_game')" id="btn_game">終極密碼</span>
+        <span class="nav_btn" onclick="showDiv('_brick')" id="btn_brick">打磚塊</span>
+        <span class="nav_btn" onclick="showDiv('_memory')" id="btn_memory">記憶力大考驗</span>
+        
+    </div>
 
-        <span class="nav_btn" onclick="showDiv('_game');location.href='index.html'" id="btn_game">終極密碼</span>
+     <!-- index -->
+     <div id="div_index" class="hidden">
+        哈囉我是首頁
     </div>
 
      <!-- 終極密碼 -->
@@ -62,10 +71,31 @@
         
     </div>
 
-    <!-- 排行榜 -->
-    <div id="div_ranking" class="hidden">
-        排行榜
+    <!-- ooxx -->
+    <div id="div_ooxx" class="hidden">
+        ooxx
     </div>
+
+      <!-- 記憶力大考驗 -->
+      <div id="div_memory" class="hidden">
+        <div class="container-fliud">
+            <div class="memory_game">
+                <h3 class="title">Memory Game</h3>
+                <div class="game_board"></div>
+                <button class="reset" onclick="window.location.reload();">Reset Game！</button>
+            </div> 
+        </div>
+    </div>
+
+     <!-- 剪刀石頭布 -->
+     <div id="div_pss" class="hidden">
+        剪刀石頭布
+     </div>
+     
+     <!-- 打磚塊 -->
+     <div id="div_brick" class="hidden">
+        打磚塊
+     </div>
 
     <script src="index.js"></script>
 </body>
