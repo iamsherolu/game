@@ -3,17 +3,82 @@
     grid-template-columns: 20% 80%;
 }
 
+/* menu選單 */
+#div_menu{
+    margin: 50px auto 30px;
+    position: relative;
+}
+.menu_btn{
+    border-radius: 20px;
+    background-color: #EBDAC8;
+    box-shadow: 7px 7px 4px #EBC1A8;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+    max-width: 400px;
+    color: #965454;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Marhey', sans-serif;
+}
+.menu_btn:hover{
+    background-color:#D8B0B0;
+    color: snow;
+    box-shadow: 5px 5px 3px gray;
+}
+.close_btn{
+    border-radius: 50%;
+    background-color:#D8B0B0;
+    color: snow;
+    position: absolute;
+    left: 0px;
+    top: -10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 3px gray;
+    font-family: 'Marhey', sans-serif;
+}
+.close_btn:hover{
+    background-color: #965454;
+}
+
+
 /* intro */
 ul li{
     font-family: 'Marhey', sans-serif;
 }
+ul{
+    list-style-type: none;
+}
+#intro_title{
+    font-size: 50px;
+    margin: 30px auto 30px;
+    color: #965454;
+}
+#div_intro{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+}
+#div_intro img{
+    width: 13%;
+    display: inline-block;
+}
 
 /* 遊戲按鈕選單 */
-.menu{
+.aside{
     margin-top: 100px;
     margin-left: -15px;
 }
-.menu_btn{
+.aside_btn{
     padding: 15px;
     margin-bottom:20px;
     text-align: center;
@@ -25,7 +90,7 @@ ul li{
     font-size: 18px;
 }
 
-.menu_layout{
+.aside_layout{
     width: 100%;
     max-width: 250px;
 }
@@ -48,6 +113,11 @@ ul li{
     justify-content: center;
     align-items: center;
     font-family: 'Marhey', sans-serif;
+    cursor: pointer;
+}
+.menu_button:hover{
+    background-color: #965454;
+    color: snow;
 }
 
 /* 遊戲們 */
@@ -61,11 +131,8 @@ ul li{
     border-radius: 20px 0px 0px 20px;
     background-color: snow;
     margin: 50px auto;
-    height: 700px;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 700px;
 }
 /* 終極密碼 */
 .game_info{
@@ -76,7 +143,7 @@ ul li{
     border-radius: 10px;
     font-family: 'Marhey', sans-serif;
     box-shadow: 5px 5px 3px gray;
-    margin:50px auto;
+    margin:50px auto ;
 }
 .title{
     font-size: 18px;
@@ -204,13 +271,76 @@ ul li{
     max-width: 550px;
     width: 100%;
     position: relative;
-    height: 300px;
     margin: 0px auto;
 }
 button{
     color: black;
 }
 
+/* 剪刀石頭布 */
+.battle{
+    margin: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 20px;
+    font-family: 'Marhey', sans-serif;
+}
+.game_ratio{
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Marhey', sans-serif;
+}
+.other_btn{
+    margin: 10px;
+    text-align: center;
+}
+.gesture{
+    margin: 10px;
+    text-align: center;
+    padding: 35px 20px;
+}
+.container_pss{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1000px;
+    margin: 120px auto;
+}
+.battle img{
+    width: 50%;
+}
+.gesture img{
+    width: 15%;
+    cursor: pointer;
+    margin: 20px;
+}
+.ratio_layout{
+    background-color: green;
+    border: 10px solid brown;
+    box-shadow: 5px 5px 3px gray;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+.result_pss{
+    font-family: 'Marhey', sans-serif;
+    margin: 20px;
+}
+#computer_gesture{
+    transform: rotate(45deg);
+}
+#user_gesture{
+    transform: rotate(-45deg);
+}
+.name{
+    margin-top: 20px;
+    font-size: 22px;
+}
+.result_match{
+    color: green;
+}
 
 
 /* footer */

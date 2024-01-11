@@ -12,16 +12,21 @@
     <title>Diversion Topia</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Marhey:wght@600&display=swap');
+
+        .athlete{
+            display: inline-block;
+        }
+
         @media (max-width:768px) {
             .container-fluid{
                 grid-template-columns: auto;
                 grid-row: 2;
                 grid-column: 1;
             }
-            .menu_btn{
+            .aside_btn{
                 display: none;
             }
-            .menu{
+            .aside{
                 margin-top: 0px;
                 display: inline-block;
             }
@@ -34,7 +39,7 @@
             .footer{
                 display: none;
             }
-            .menu_layout{
+            .aside_layout{
                 width: 100%;
                 max-width: 500px;
                 position: relative;
@@ -48,6 +53,18 @@
             .logo{
                 font-size: 25px;
             }
+            .container_pss{
+                grid-template-columns: auto;
+                grid-row: 4;
+                grid-column: 1;
+            }
+            .container_pss{
+                margin:10px auto;
+            }
+            #div_menu{
+                display: none;
+            }
+            
         }
         @media (min-width:769px) {
             .menu_button
@@ -61,15 +78,15 @@
     <div class="container-fluid">
 
         <!-- 遊戲按鈕選單 -->
-        <div class="menu">
-            <div class="menu_layout">
+        <div class="aside">
+            <div class="aside_layout">
                 <div class="logo" id="btn_intro" onclick="location.href='index.html';intro();showDiv('_intro')">Diversion Topia</div>
-                <div class="menu_btn" id="btn_memory" onclick="game_link(this); showDiv('_memory')">記憶力大考驗</div>
-                <div class="menu_btn" id="btn_ooxx" onclick="game_link(this); showDiv('_ooxx')">ooxx</div>
-                <div class="menu_btn" id="btn_code" onclick="game_link(this); showDiv('_code')">終極密碼</div>
-                <div class="menu_btn" id="btn_pss" onclick="game_link(this); showDiv('_pss')">剪刀石頭布</div>
-                <div class="menu_btn" id="btn_bricks" onclick="game_link(this); showDiv('_bricks')">打磚塊</div>
-                <div class="menu_button">MENU</div>
+                <div class="aside_btn" id="btn_memory" onclick="game_link(this); showDiv('_memory')">記憶力大考驗</div>
+                <div class="aside_btn" id="btn_ooxx" onclick="game_link(this); showDiv('_ooxx')">ooxx</div>
+                <div class="aside_btn" id="btn_code" onclick="game_link(this); showDiv('_code')">終極密碼</div>
+                <div class="aside_btn" id="btn_pss" onclick="game_link(this); showDiv('_pss')">剪刀石頭布</div>
+                <div class="aside_btn" id="btn_bricks" onclick="game_link(this); showDiv('_bricks')">打磚塊</div>
+                <div class="menu_button" onclick="showDiv('_menu')">MENU</div>
             </div>
         </div>
         
@@ -77,18 +94,36 @@
         <div class="game">
             <div class="game_layout">
 
+                <!-- menu -->
+                <div id="div_menu" class="hidden" onclick="location.href='index.html'">
+                    <div class="close_btn">close</div>
+                    <div class="menu_btn" onclick="showDiv('_memory')">記憶力大考驗</div>
+                    <div class="menu_btn">ooxx</div>
+                    <div class="menu_btn">終極密碼</div>
+                    <div class="menu_btn">剪刀石頭布</div>
+                    <div class="menu_btn">打磚塊</div>
+                </div>
+
                 <!-- intro -->
                 <div id="div_intro" class="hidden">
+                    <div class="title" id="intro_title">WELCOME to  Diversion Topia</div>
                     <div class="game_info">
-                        <div class="title">WELCOME!歡迎來到Diversion Topia
-                            <p>你打發時間的理想去處！</p>
-                        </div>
+                        <p>你打發時間的理想去處！</p>
                         <ul>
                             <li>DiversionTopia 提供簡單有趣的小遊戲，讓你在繁忙生活中找到片刻輕鬆。</li>
                             <li>DiversionTopia 隨時迎接你的挑戰，沒有繁瑣等待，讓你想玩就玩。</li>
                         </ul>
-                        快來 DiversionTopia，探索無窮樂趣，在忙碌的生活之餘療癒放鬆一下！點選按鈕開始你的輕鬆冒險吧！
+                        快來 DiversionTopia，探索無窮樂趣，在忙碌的生活之餘療癒放鬆一下！
+                        <p>點選上方MENU按鈕或是左側遊戲名稱按鈕，開始你的輕鬆冒險吧！</p>
                     </div>
+                    <div class="intro_images">
+                        <img src="https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png">
+                        <img src="https://1.bp.blogspot.com/-WIFLF8Am0VQ/WhUhlkuzHsI/AAAAAAABIMY/Rl1AX4Qay60rWWj4yczpdQ5ygvm_VJpLwCLcBGAs/s800/animal_quiz_usagi_maru.png">
+                        <img src="https://4.bp.blogspot.com/-yf0uqvHNraI/WtRzlznE47I/AAAAAAABLno/j6J43WELDWA1cefM75mhBP4IsX1QZbnRQCLcBGAs/s800/smartphone_smile_boys.png">
+                        <img src="https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png">
+                        <img src="https://2.bp.blogspot.com/-jqLamw3dgp0/WhUhiXh4HNI/AAAAAAABIMA/8Ivntjst6hEq1kwBkE8EBXQnhSzPd7IXwCLcBGAs/s800/animal_quiz_inu_batsu.png">
+                    </div>
+                    
                 </div>
 
                 <!-- 終極密碼 -->
@@ -148,9 +183,33 @@
 
                   <!-- pss -->
                 <div id="div_pss" class="hidden">
-                    <div class="game_info">
-                        <div class="title">剪刀石頭布－遊戲說明</div>
-                        
+                    <div class="container_pss">
+                        <div class="battle">
+                            <div class="athlete">
+                                <img src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png" id="computer_gesture">
+                                <div class="name">computer</div>
+                            </div>
+                            <div class="athlete">
+                                <img src="https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png" id="user_gesture">
+                                <div class="name">you</div>
+                            </div>
+                            <!-- <div class="result_pss">YOU LOST!</div> -->
+                        </div>
+                        <div class="gesture">
+                            <p style="font-size: 20px;margin-top: 10px;">請點選此變換你的拳！</p>
+                            <img src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png">
+                            <img src="https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png">
+                            <img src="https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png">
+                        </div>
+                        <div class="game_ratio">
+                            <div class="ratio_title">這一局勝負為</div>
+                            <p class="result_match">You Lost!</p>
+                            <div class="ratio_title">目前比數為</div>
+                            <div class="ratio_layout">2:2</div>
+                        </div>
+                        <div class="other_btn">
+                            
+                        </div>
                     </div>
                 </div>
 
