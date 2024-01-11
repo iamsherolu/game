@@ -1,54 +1,88 @@
-body{
-     margin: 0; 
-     padding: 0; 
-}
-@media (max-width:768px) {
-    .nav_btn{
-        display: none;
-    }
-}
-.topnav{
-    margin: 0;
-    padding: 20px;
-}
-.logo{
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 35px;
-    cursor: pointer;
-    color: brown;
-}
-.nav_btn{
-    cursor: pointer;
-    float: right;
-    color: 	#D9B3B3;
-    text-align: center;
-    width: 120px;
-}
-.nav_btn:hover{
-    color: 	#AD5A5A;
-    border-bottom:1px solid	#AD5A5A ;
-}
-.hidden{
-    display: none;
+.container-fluid{
+    display: grid;
+    grid-template-columns: 20% 80%;
 }
 
-/* 終極密碼 */
-#div_game{
-    padding-top: 50px;
-    padding-bottom: 50px;
+/* intro */
+ul li{
+    font-family: 'Marhey', sans-serif;
 }
+
+/* 遊戲按鈕選單 */
+.menu{
+    margin-top: 100px;
+    margin-left: -15px;
+}
+.menu_btn{
+    padding: 15px;
+    margin-bottom:20px;
+    text-align: center;
+    border-radius: 0px 15px 15px 0px;
+    background-color: #faead3;
+    box-shadow: 5px 5px 3px #965454;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.menu_layout{
+    width: 100%;
+    max-width: 250px;
+}
+.logo{
+    font-family: 'Marhey', sans-serif;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 35px;
+    color:#965454 ;
+    cursor: pointer;
+}
+.menu_button{
+    color:#965454 ;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #faead3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Marhey', sans-serif;
+}
+
+/* 遊戲們 */
+.game{
+    padding-left: 50px;
+    margin-right: -15px;
+}
+.game_layout{
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: snow;
+    margin: 50px auto;
+    height: 700px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 終極密碼 */
 .game_info{
     width: 90%;
-    max-width: 600px;
-    margin: 30px auto;
+    max-width: 750px;
     padding: 10px;
     background-color: gainsboro;    
     border-radius: 10px;
+    font-family: 'Marhey', sans-serif;
+    box-shadow: 5px 5px 3px gray;
+    margin:50px auto;
 }
 .title{
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
+    font-family: 'Marhey', sans-serif;
 }
 .container_code{
     width: 100%;
@@ -64,7 +98,7 @@ body{
     padding: 20px;
     text-align: center;
     font-size: 25px;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Marhey', sans-serif;
     cursor: pointer;
     width: 100%;
     max-width: 300px;
@@ -85,6 +119,7 @@ body{
     padding: 20px 0px;
     width: 100%;
     max-width: 500px;
+    font-family: 'Marhey', sans-serif;
 }
 #guess_num{
     width: 200px;
@@ -110,7 +145,7 @@ body{
     margin-top: 5px;
     color: red;
     font-size: 20px;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Marhey', sans-serif;
     display: none;
 }
 #count{
@@ -118,6 +153,7 @@ body{
     color:#6A6AFF;
     font-size: 18px;
     font-weight: 600;
+    font-family: 'Marhey', sans-serif;
 }
 .reset{
     background-color: #F1E1FF;
@@ -175,57 +211,12 @@ button{
     color: black;
 }
 
-/* 記憶力大考驗 */
-.memory_game{
-    margin: 60px auto 20px;
-    padding: 20px;
-    max-width: 100%;
-    height: 650px;
-    width: 500px;
+
+
+/* footer */
+#footer{
+    padding: 8px;
+    font-family: 'Marhey', sans-serif;
     text-align: center;
-    background: linear-gradient(100deg,#D2E9FF,#FFF4C1,	#F1E1FF);
-    align-items: center;
-    justify-content: center;
-
-}
-.game_board{
-    width: 450px;
-    height: 440px;
-    display: flex;
-    flex-wrap: wrap;
-    transform-style: preserve-3d;
-    perspective: 500px;
-    margin: 20px auto 20px;
-}
-.memory_game h3{
-    color: darkred;
-}
-.item{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: snow;
-    width: 100px;
-    height: 90px;
-    margin-left: 10px;
-    transition: 0.25s;
-    transform: rotateY(180deg);
-}
-
-.item::after{
-    content: '';
-    position: absolute;
-    inset:0;
-    background:snow;
-    transition: 0.4s;
-    transform: rotateY(0deg);
-    backface-visibility: hidden;
-   
-}
-.open::after{
-    transform: rotateY(180deg);
-}
-.item.open{
-    transform: rotateY(0deg);
+    color: #965454;
 }

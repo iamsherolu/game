@@ -1,4 +1,4 @@
-// 導覽列按鈕：按按鈕跳出指定div，其餘隱藏
+// 按按鈕跳出指定div，其餘隱藏
 function showDiv(divId) {
     hideDiv();
 
@@ -16,8 +16,70 @@ function hideDiv() {
         div.style.display = 'none';
     });
 }
-showDiv('_index');
+showDiv('_intro');
 
+
+var start=$('#start');
+var game_ooxx = $('#btn_ooxx');
+var game_memory = $('#btn_memory');
+var game_pss = $('#btn_pss');
+var game_code = $('#btn_code');
+var game_bricks = $('#btn_bricks');
+
+// 初始情況下，設定所有按鈕的初始樣式
+game_ooxx.add(game_memory).add(game_pss).add(game_code).add(game_bricks).css({
+    'backgroundColor': '#faead3',
+    'marginLeft': '0px',
+    'borderRadius': '0px 15px 15px 0px',
+});
+
+function game_link(selectedGame) {
+
+    hideDiv();
+    // 重設所有按鈕的樣式
+    game_ooxx.add(game_memory).add(game_pss).add(game_code).add(game_bricks).css({
+        'backgroundColor': '#faead3',
+        'marginLeft': '0px',
+        'borderRadius': '0px 15px 15px 0px'
+    });
+
+    // 根據選中的按鈕設定樣式
+    if (selectedGame.is(game_ooxx)) {
+        $('body').css('backgroundColor', '#DBE2EC');
+        $('#div_ooxx').css('display','block');
+    } else if (selectedGame.is(game_bricks)) {
+        $('body').css('backgroundColor', '#e0e5df');
+        $('#div_bricks').css('display','block');
+    } else if (selectedGame.is(game_memory)) {
+        $('body').css('backgroundColor', '#ead0d1');
+        $('#div_memory').css('display','block');
+    } else if (selectedGame.is(game_pss)) {
+        $('body').css('backgroundColor', '#e2cada');
+        $('#div_pss').css('display','block');
+    } else {
+        $('body').css('backgroundColor', '#C6DEE0');
+        $('#div_code').css('display','block');
+    } 
+
+    // 設定選中的按鈕的樣式
+    selectedGame.css({
+        'backgroundColor': '#b77e8d',
+        'marginLeft': '20px',
+        'borderRadius': '15px'
+    });
+}
+
+function intro(){
+    $('body').css('backgroundColor', '#EBC1A8');
+}
+
+// 點擊按鈕時執行的函數
+game_ooxx.add(game_memory).add(game_pss).add(game_code).add(game_bricks).click(function() {
+    game_link($(this));
+});
+
+// 初始情況下，會呼叫intro()，顯示預設背景顏色
+intro(start);
 
 // 終極密碼的js們
 var small;
@@ -123,61 +185,3 @@ function change(){
     document.getElementById("level_layout").style.display="block";
     document.getElementById("info_layout").style.display="none";
 }
-
-
-
-//ooxx的js們
-
-//打磚塊的js們
-
-//記憶力大考驗的js們
-const pictures=[
-    'https://1.bp.blogspot.com/-uoAUokNUGJc/XxU0v2S47gI/AAAAAAABaPs/1rFMl76-f6M7PuSG77mOWAwKrjmt0e5dACNcBGAsYHQ/s1600/yumekawa_bird1_red.png',
-    'https://1.bp.blogspot.com/-uoAUokNUGJc/XxU0v2S47gI/AAAAAAABaPs/1rFMl76-f6M7PuSG77mOWAwKrjmt0e5dACNcBGAsYHQ/s1600/yumekawa_bird1_red.png',
-    'https://1.bp.blogspot.com/-rbsE_u7VcbQ/XxU0wpaZZOI/AAAAAAABaP4/fWrtq1wo9QM7s1t4fyXpuza5f7LUqHpZQCNcBGAsYHQ/s1600/yumekawa_bird4_blue.png',
-    'https://1.bp.blogspot.com/-rbsE_u7VcbQ/XxU0wpaZZOI/AAAAAAABaP4/fWrtq1wo9QM7s1t4fyXpuza5f7LUqHpZQCNcBGAsYHQ/s1600/yumekawa_bird4_blue.png',
-    'https://1.bp.blogspot.com/-yMpJyA42TwY/XxU0xCLTNcI/AAAAAAABaP8/SuCP0NYBRnwmBxG44JxeujVYoEZ9s8oVgCNcBGAsYHQ/s1600/yumekawa_bird5_purple.png',
-    'https://1.bp.blogspot.com/-yMpJyA42TwY/XxU0xCLTNcI/AAAAAAABaP8/SuCP0NYBRnwmBxG44JxeujVYoEZ9s8oVgCNcBGAsYHQ/s1600/yumekawa_bird5_purple.png',
-    'https://1.bp.blogspot.com/-OgXsWbsTn9g/XxU0wA1LnGI/AAAAAAABaPw/QxfmUXAlwVkPo1tdOku4EZRJyioUzemKQCNcBGAsYHQ/s1600/yumekawa_bird2_white.png',
-    'https://1.bp.blogspot.com/-OgXsWbsTn9g/XxU0wA1LnGI/AAAAAAABaPw/QxfmUXAlwVkPo1tdOku4EZRJyioUzemKQCNcBGAsYHQ/s1600/yumekawa_bird2_white.png',
-    'https://1.bp.blogspot.com/-6KA4b6Yzqs4/XxU0wWckoII/AAAAAAABaP0/NL2sOUXPehc9-wGizN5CDwo4muGkvidCACNcBGAsYHQ/s1600/yumekawa_bird3_green.png',
-    'https://1.bp.blogspot.com/-6KA4b6Yzqs4/XxU0wWckoII/AAAAAAABaP0/NL2sOUXPehc9-wGizN5CDwo4muGkvidCACNcBGAsYHQ/s1600/yumekawa_bird3_green.png',
-    'https://1.bp.blogspot.com/-f0UimUR1SVc/XxU0xHkiHLI/AAAAAAABaQA/r3HwmWx-4pMU70JyraGyv1Hycd-BVF4RQCNcBGAsYHQ/s1600/yumekawa_bird6_yellow.png',
-    'https://1.bp.blogspot.com/-f0UimUR1SVc/XxU0xHkiHLI/AAAAAAABaQA/r3HwmWx-4pMU70JyraGyv1Hycd-BVF4RQCNcBGAsYHQ/s1600/yumekawa_bird6_yellow.png',
-    'https://1.bp.blogspot.com/-Jh6Y6hylvC4/XxU0x55zxPI/AAAAAAABaQI/Ku60i_RAJMcF7lyaAasjQ3vSEPgQGNKtACNcBGAsYHQ/s1600/yumekawa_bird8_gray.png',
-    'https://1.bp.blogspot.com/-Jh6Y6hylvC4/XxU0x55zxPI/AAAAAAABaQI/Ku60i_RAJMcF7lyaAasjQ3vSEPgQGNKtACNcBGAsYHQ/s1600/yumekawa_bird8_gray.png',
-    'https://1.bp.blogspot.com/-wZxFVGzr26c/XxU0xrRse6I/AAAAAAABaQE/OA3agR8Pk1k0vh2Q2Wd-V-8Ubbdd8y6tQCNcBGAsYHQ/s1600/yumekawa_bird7_orange.png',
-    'https://1.bp.blogspot.com/-wZxFVGzr26c/XxU0xrRse6I/AAAAAAABaQE/OA3agR8Pk1k0vh2Q2Wd-V-8Ubbdd8y6tQCNcBGAsYHQ/s1600/yumekawa_bird7_orange.png',
-    
-];
-
-var pic=pictures.sort(() => (Math.random() >.5) ? 2: -1);
-
-for(i=0;i<pictures.length;i++){
-    let box=document.createElement('div')
-    box.className='item';
-
-    const img = document.createElement('img');
-    img.src = pic[i];
-    box.appendChild(img);
-    img.width = '60';
-    img.height = '60';
-
-    box.onclick=function(){
-        this.classList.add('open')
-        setTimeout(function(){
-
-            if(document.querySelectorAll('.open').length >1){
-                if(document.querySelectorAll('.open')[0].innerHTML==document.querySelectorAll('.open')[1].innerHTML){
-                    
-                }
-            }
-
-        },500)
-    }
-
-    document.querySelector('.game_board').appendChild(box);
-}
-
-
-//剪刀石頭布的js們
