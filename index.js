@@ -48,67 +48,78 @@ window.addEventListener('resize', function () {
     }
 });
 
-var start=$('#start');
-var game_ooxx = $('#btn_ooxx');
-var game_memory = $('#btn_memory');
-var game_pss = $('#btn_pss');
-var game_code = $('#btn_code');
-var game_bricks = $('#btn_bricks');
+//預設網頁背景顏色
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.style.backgroundColor = '#EBC1A8'; 
+  });
 
-// 初始情況下，設定所有按鈕的初始樣式
-game_ooxx.add(game_memory).add(game_pss).add(game_code).add(game_bricks).css({
-    'backgroundColor': '#faead3',
-    'marginLeft': '0px',
-    'borderRadius': '0px 15px 15px 0px',
-});
+//按按鈕變換顏色（側邊欄按鈕）
+var aside_ooxx=document.getElementById("aside_ooxx");
+var aside_code=document.getElementById("aside_code");
+var aside_pss=document.getElementById("aside_pss");
+var aside_memory=document.getElementById("aside_memory");
+var aside_bricks=document.getElementById("aside_bricks");
 
-function game_link(selectedGame) {
+aside_ooxx.addEventListener('click', change_bgc);
+aside_code.addEventListener('click', change_bgc);
+aside_pss.addEventListener('click', change_bgc);
+aside_memory.addEventListener('click', change_bgc);
+aside_bricks.addEventListener('click', change_bgc);
 
-    hideDiv();
-    // 重設所有按鈕的樣式
-    game_ooxx.add(game_memory).add(game_pss).add(game_code).add(game_bricks).css({
-        'backgroundColor': '#faead3',
-        'marginLeft': '0px',
-        'borderRadius': '0px 15px 15px 0px'
-    });
+function change_bgc(event){
 
-    // 根據選中的按鈕設定樣式
-    if (selectedGame.is(game_ooxx)) {
-        $('body').css('backgroundColor', '#DBE2EC');
-        $('#div_ooxx').css('display','block');
-    } else if (selectedGame.is(game_bricks)) {
-        $('body').css('backgroundColor', '#e0e5df');
-        $('#div_bricks').css('display','block');
-    } else if (selectedGame.is(game_memory)) {
-        $('body').css('backgroundColor', '#ead0d1');
-        $('#div_memory').css('display','block');
-    } else if (selectedGame.is(game_pss)) {
-        $('body').css('backgroundColor', '#e2cada');
-        $('#div_pss').css('display','block');
-    } else {
-        $('body').css('backgroundColor', '#C6DEE0');
-        $('#div_code').css('display','block');
-    } 
+    var clickedButton = event.target;
 
-    // 設定選中的按鈕的樣式
-    selectedGame.css({
-        'backgroundColor': '#b77e8d',
-        'marginLeft': '20px',
-        'borderRadius': '15px'
-    });
+    if(clickedButton ===aside_ooxx){
+        document.body.style.backgroundColor = '#DBE2EC';
+    }
+    else if(clickedButton ===aside_bricks){
+        document.body.style.backgroundColor = '#e0e5df'; 
+    }
+    else if(clickedButton ===aside_code){
+        document.body.style.backgroundColor = '#C6DEE0';
+    }
+    else if(clickedButton ===aside_memory){
+        document.body.style.backgroundColor = '#ead0d1'; 
+    }
+    else if(clickedButton ===aside_pss){
+        document.body.style.backgroundColor = '#e2cada';
+    }
 }
 
-function intro(){
-    $('body').css('backgroundColor', '#EBC1A8');
+//按按鈕變換顏色（menu按鈕）
+var menu_ooxx=document.getElementById("menu_ooxx");
+var menu_code=document.getElementById("menu_code");
+var menu_pss=document.getElementById("menu_pss");
+var menu_memory=document.getElementById("menu_memory");
+var menu_bricks=document.getElementById("menu_bricks");
+
+menu_ooxx.addEventListener('click', change_bgc);
+menu_code.addEventListener('click', change_bgc);
+menu_pss.addEventListener('click', change_bgc);
+menu_memory.addEventListener('click', change_bgc);
+menu_bricks.addEventListener('click', change_bgc);
+
+function change_bgc_menu(event){
+
+    var clickedButton = event.target;
+
+    if(clickedButton ===menu_ooxx){
+        document.body.style.backgroundColor = '#DBE2EC';
+    }
+    else if(clickedButton ===menu_bricks){
+        document.body.style.backgroundColor = '#e0e5df'; 
+    }
+    else if(clickedButton ===menu_code){
+        document.body.style.backgroundColor = '#C6DEE0';
+    }
+    else if(clickedButton ===menu_memory){
+        document.body.style.backgroundColor = '#ead0d1'; 
+    }
+    else if(clickedButton ===menu_pss){
+        document.body.style.backgroundColor = '#e2cada';
+    }
 }
-
-// 點擊按鈕時執行的函數
-game_ooxx.add(game_memory).add(game_pss).add(game_code).add(game_bricks).click(function() {
-    game_link($(this));
-});
-
-// 初始情況下，會呼叫intro()，顯示預設背景顏色
-intro(start);
 
 // 終極密碼的js們
 var small;

@@ -80,13 +80,13 @@
         <!-- 遊戲按鈕選單 -->
         <div class="aside">
             <div class="aside_layout">
-                <div class="logo" id="btn_intro" onclick="location.href='index.html';intro();showDiv('_intro')">Diversion Topia</div>
-                <div class="aside_btn" id="btn_memory" onclick="game_link(this); showDiv('_memory')">記憶力大考驗</div>
-                <div class="aside_btn" id="btn_ooxx" onclick="game_link(this); showDiv('_ooxx')">ooxx</div>
-                <div class="aside_btn" id="btn_code" onclick="game_link(this); showDiv('_code')">終極密碼</div>
-                <div class="aside_btn" id="btn_pss" onclick="game_link(this); showDiv('_pss')">剪刀石頭布</div>
-                <div class="aside_btn" id="btn_bricks" onclick="game_link(this); showDiv('_bricks')">打磚塊</div>
-                <div class="menu_button" onclick="showOverlay()">MENU</div>
+                <div class="logo" id="intro_intro" onclick="location.href='index.html';showDiv('_intro')">Diversion Topia</div>
+                <div class="aside_btn" id="aside_memory" onclick="showDiv('_memory');change_bgc(event)">記憶力大考驗</div>
+                <div class="aside_btn" id="aside_ooxx" onclick="showDiv('_ooxx');change_bgc(event)">ooxx</div>
+                <div class="aside_btn" id="aside_code" onclick="showDiv('_code');change_bgc(event)">終極密碼</div>
+                <div class="aside_btn" id="aside_pss" onclick="showDiv('_pss');change_bgc(event)">剪刀石頭布</div>
+                <div class="aside_btn" id="aside_bricks" onclick="showDiv('_bricks');change_bgc(event)">打磚塊</div>
+                <div class="menu_button"  onclick="showOverlay()">MENU</div>
             </div>
         </div>
         
@@ -97,11 +97,11 @@
                 <div class="overlay_layout">
                     <div class="close_btn" onclick="offOverlay()">close</div>
                     <div class="menu_btns">
-                        <div class="menu_btn" onclick="showDiv('_memory');close_overlay();">記憶力大考驗</div>
-                        <div class="menu_btn" onclick="showDiv('_ooxx');close_overlay();">ooxx</div>
-                        <div class="menu_btn" onclick="showDiv('_code');close_overlay();">終極密碼</div>
-                        <div class="menu_btn" onclick="showDiv('_pss');close_overlay();">剪刀石頭布</div>
-                        <div class="menu_btn" onclick="showDiv('_bricks');close_overlay();">打磚塊</div>
+                        <div class="menu_btn" id="menu_memory" onclick="showDiv('_memory');close_overlay();change_bgc_menu(event)">記憶力大考驗</div>
+                        <div class="menu_btn" id="menu_ooxx" onclick="showDiv('_ooxx');close_overlay();change_bgc_menu(event)">ooxx</div>
+                        <div class="menu_btn" id="menu_code" onclick="showDiv('_code');close_overlay();change_bgc_menu(event)">終極密碼</div>
+                        <div class="menu_btn" id="menu_pss" onclick="showDiv('_pss');close_overlay();change_bgc_menu(event)">剪刀石頭布</div>
+                        <div class="menu_btn" id="menu_bricks" onclick="showDiv('_bricks');close_overlay();change_bgc_menu(event)">打磚塊</div>
                     </div>
                     
                 </div>

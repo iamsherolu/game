@@ -15,14 +15,14 @@
     text-align: center;
 }
 #show_overlay img{
-    width: 50%;
+    width: 40%;
 }
 .overlay_layout{
     position: absolute;
     width: 90%;
     max-width: 450px;
     left: 0;
-    top: 30%;
+    top: 35%;
     border-radius: 0px 20px 20px 0px;
     background-color: snow;
     box-shadow: 7px 7px 4px gray;
