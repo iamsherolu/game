@@ -1,3 +1,17 @@
+function scrollToSection(sectionId) {
+    // 滾動到相應的位置
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+//在menu按下任意按鈕，除了跳轉到對應div外，也關閉overlay
+var overlay = document.getElementById('show_overlay');
+
+function close_overlay(){
+    overlay.style.display='none';
+}
+
 // 按按鈕跳出指定div，其餘隱藏
 function showDiv(divId) {
     hideDiv();
@@ -18,6 +32,21 @@ function hideDiv() {
 }
 showDiv('_intro');
 
+
+//menu overlay
+function showOverlay(){
+    document.getElementById('show_overlay').style.display='block';
+}
+function offOverlay(){
+    document.getElementById('show_overlay').style.display='none';
+}
+
+// 在螢幕大小變化時檢測並自動隱藏overlay
+window.addEventListener('resize', function () {
+    if (window.innerWidth >= 600) {
+        offOverlay();
+    }
+});
 
 var start=$('#start');
 var game_ooxx = $('#btn_ooxx');

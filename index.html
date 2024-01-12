@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="index.css"> 
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- AOS animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>    
     <title>Diversion Topia</title>
     <style>
@@ -36,9 +39,6 @@
             .game{
                 padding-left: 0px;
             }
-            .footer{
-                display: none;
-            }
             .aside_layout{
                 width: 100%;
                 max-width: 500px;
@@ -61,8 +61,8 @@
             .container_pss{
                 margin:10px auto;
             }
-            #div_menu{
-                display: none;
+            .intro_images{
+                margin: 0px auto;
             }
             
         }
@@ -86,23 +86,30 @@
                 <div class="aside_btn" id="btn_code" onclick="game_link(this); showDiv('_code')">終極密碼</div>
                 <div class="aside_btn" id="btn_pss" onclick="game_link(this); showDiv('_pss')">剪刀石頭布</div>
                 <div class="aside_btn" id="btn_bricks" onclick="game_link(this); showDiv('_bricks')">打磚塊</div>
-                <div class="menu_button" onclick="showDiv('_menu')">MENU</div>
+                <div class="menu_button" onclick="showOverlay()">MENU</div>
             </div>
         </div>
         
+        <!-- menu overlay -->
+            <div id="show_overlay">
+                <div class="logo" id="btn_intro" onclick="location.href='index.html';">Diversion Topia</div>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmvs2qUQQMnXbFOu6BCcsw3vpcNElFuwG-haSWCu6Kbb27liPl5zWkpnCh1sixw5ve2sA13JErwMRBfrjHry5DPQt4zR7V3uQV-MECREz76zHeCTFxeRiti159VW1f3gPqZdlHQp-dtaq_EVuII8_jCtWxe8xDOh8u37VJ7a3NAhvoPbM3KYPBqlJQiA/s961/eto_usagi_kamifubuki.png">
+                <div class="overlay_layout">
+                    <div class="close_btn" onclick="offOverlay()">close</div>
+                    <div class="menu_btns">
+                        <div class="menu_btn" onclick="showDiv('_memory');close_overlay();">記憶力大考驗</div>
+                        <div class="menu_btn" onclick="showDiv('_ooxx');close_overlay();">ooxx</div>
+                        <div class="menu_btn" onclick="showDiv('_code');close_overlay();">終極密碼</div>
+                        <div class="menu_btn" onclick="showDiv('_pss');close_overlay();">剪刀石頭布</div>
+                        <div class="menu_btn" onclick="showDiv('_bricks');close_overlay();">打磚塊</div>
+                    </div>
+                    
+                </div>
+            </div>
+
         <!-- 遊戲展示位置 -->
         <div class="game">
             <div class="game_layout">
-
-                <!-- menu -->
-                <div id="div_menu" class="hidden" onclick="location.href='index.html'">
-                    <div class="close_btn">close</div>
-                    <div class="menu_btn" onclick="showDiv('_memory')">記憶力大考驗</div>
-                    <div class="menu_btn">ooxx</div>
-                    <div class="menu_btn">終極密碼</div>
-                    <div class="menu_btn">剪刀石頭布</div>
-                    <div class="menu_btn">打磚塊</div>
-                </div>
 
                 <!-- intro -->
                 <div id="div_intro" class="hidden">
@@ -226,6 +233,13 @@
 
     <!-- footer -->
     <footer class="footer fixed-bottom" id="footer">©Hsing Jou Lu 2024</footer>        
+
+    <!-- 套用AOS動畫 -->
+    <script>
+        AOS.init({
+            duration:3000,
+        });
+    </script>
 
     <script src="index.js"></script>
 </body>
