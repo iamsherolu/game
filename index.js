@@ -10,6 +10,7 @@ var overlay = document.getElementById('show_overlay');
 
 function close_overlay(){
     overlay.style.display='none';
+    
 }
 
 // 按按鈕跳出指定div，其餘隱藏
@@ -54,29 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 //按按鈕變換顏色（側邊欄按鈕）
-var aside_ooxx=document.getElementById("aside_ooxx");
 var aside_code=document.getElementById("aside_code");
 var aside_pss=document.getElementById("aside_pss");
 var aside_memory=document.getElementById("aside_memory");
-var aside_bricks=document.getElementById("aside_bricks");
 
-aside_ooxx.addEventListener('click', change_bgc);
 aside_code.addEventListener('click', change_bgc);
 aside_pss.addEventListener('click', change_bgc);
 aside_memory.addEventListener('click', change_bgc);
-aside_bricks.addEventListener('click', change_bgc);
 
 function change_bgc(event){
 
     var clickedButton = event.target;
 
-    if(clickedButton ===aside_ooxx){
-        document.body.style.backgroundColor = '#DBE2EC';
-    }
-    else if(clickedButton ===aside_bricks){
-        document.body.style.backgroundColor = '#e0e5df'; 
-    }
-    else if(clickedButton ===aside_code){
+    if(clickedButton ===aside_code){
         document.body.style.backgroundColor = '#C6DEE0';
     }
     else if(clickedButton ===aside_memory){
@@ -88,29 +79,19 @@ function change_bgc(event){
 }
 
 //按按鈕變換顏色（menu按鈕）
-var menu_ooxx=document.getElementById("menu_ooxx");
 var menu_code=document.getElementById("menu_code");
 var menu_pss=document.getElementById("menu_pss");
 var menu_memory=document.getElementById("menu_memory");
-var menu_bricks=document.getElementById("menu_bricks");
 
-menu_ooxx.addEventListener('click', change_bgc);
 menu_code.addEventListener('click', change_bgc);
 menu_pss.addEventListener('click', change_bgc);
 menu_memory.addEventListener('click', change_bgc);
-menu_bricks.addEventListener('click', change_bgc);
 
 function change_bgc_menu(event){
 
     var clickedButton = event.target;
 
-    if(clickedButton ===menu_ooxx){
-        document.body.style.backgroundColor = '#DBE2EC';
-    }
-    else if(clickedButton ===menu_bricks){
-        document.body.style.backgroundColor = '#e0e5df'; 
-    }
-    else if(clickedButton ===menu_code){
+    if(clickedButton ===menu_code){
         document.body.style.backgroundColor = '#C6DEE0';
     }
     else if(clickedButton ===menu_memory){
@@ -224,4 +205,77 @@ function restart(){
 function change(){
     document.getElementById("level_layout").style.display="block";
     document.getElementById("info_layout").style.display="none";
+}
+
+//剪刀石頭布
+var user_gesture=document.getElementById('user_gesture');
+var computer_gesture=document.getElementById('computer_gesture');
+var computer_choices=[
+    'https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png',
+    'https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png',
+    'https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png'
+];
+
+var result=document.getElementById('result_match');
+
+var imageUrl;
+function choice(clickedImage) {
+    imageUrl = clickedImage.src;
+    var userImage = document.createElement('img');
+    userImage.src = imageUrl;
+
+    user_gesture.innerHTML = '';
+    user_gesture.appendChild(userImage);
+
+    computer_random_choice(computer_choices);
+    
+}
+
+function computer_random_choice(computer_choices){
+    var computerIndex = (Math.floor(Math.random() * 3));
+    var computerImage = document.createElement('img');
+    computerImage.src = computer_choices[computerIndex];
+
+    computer_gesture.innerHTML = '';
+    computer_gesture.appendChild(computerImage);
+    battle(imageUrl,computerImage);
+}
+
+
+var user_ratio=0;
+var computer_ratio=0;
+var ratio=document.getElementById('ratio');
+ratio.innerText=user_ratio+':'+computer_ratio;
+
+function battle(imageUrl, computerImage) {
+    if (imageUrl === computerImage.src) {
+        result.innerText='這一局，平手！';
+        user_ratio++;
+        computer_ratio++;
+        ratio.innerText=computer_ratio+':'+user_ratio;
+
+         // console.log('平手') ;
+    } else if (
+        (imageUrl === 'https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png' && computerImage.src === 'https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png') ||
+        (imageUrl === 'https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png' && computerImage.src === 'https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png')||
+        (imageUrl ==='https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png' && computerImage.src==='https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png')
+    ) {
+        result.innerText='這一局，你贏了！';
+        user_ratio++;
+        ratio.innerText=computer_ratio+':'+user_ratio;
+        // console.log('你贏了') ;
+    } else {
+        result.innerText='這一局，你輸了！';
+        computer_ratio++;
+        ratio.innerText=computer_ratio+':'+user_ratio;
+        // console.log('你輸了') ;
+    }
+}
+
+function restart(){
+    user_gesture.innerHTML='<img class="gesture_img" src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png">';
+    computer_gesture.innerHTML='<img class="gesture_img" src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png">';
+    user_ratio=0;
+    computer_ratio=0;
+    ratio.innerText=computer_ratio+':'+user_ratio;
 }

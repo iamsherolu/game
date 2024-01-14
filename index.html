@@ -57,9 +57,7 @@
                 grid-template-columns: auto;
                 grid-row: 4;
                 grid-column: 1;
-            }
-            .container_pss{
-                margin:10px auto;
+                margin: 0px auto;
             }
             .intro_images{
                 margin: 0px auto;
@@ -82,10 +80,8 @@
             <div class="aside_layout">
                 <div class="logo" id="intro_intro" onclick="location.href='index.html';showDiv('_intro')">Diversion Topia</div>
                 <div class="aside_btn" id="aside_memory" onclick="showDiv('_memory');change_bgc(event)">記憶力大考驗</div>
-                <div class="aside_btn" id="aside_ooxx" onclick="showDiv('_ooxx');change_bgc(event)">ooxx</div>
                 <div class="aside_btn" id="aside_code" onclick="showDiv('_code');change_bgc(event)">終極密碼</div>
                 <div class="aside_btn" id="aside_pss" onclick="showDiv('_pss');change_bgc(event)">剪刀石頭布</div>
-                <div class="aside_btn" id="aside_bricks" onclick="showDiv('_bricks');change_bgc(event)">打磚塊</div>
                 <div class="menu_button"  onclick="showOverlay()">MENU</div>
             </div>
         </div>
@@ -98,10 +94,8 @@
                     <div class="close_btn" onclick="offOverlay()">close</div>
                     <div class="menu_btns">
                         <div class="menu_btn" id="menu_memory" onclick="showDiv('_memory');close_overlay();change_bgc_menu(event)">記憶力大考驗</div>
-                        <div class="menu_btn" id="menu_ooxx" onclick="showDiv('_ooxx');close_overlay();change_bgc_menu(event)">ooxx</div>
                         <div class="menu_btn" id="menu_code" onclick="showDiv('_code');close_overlay();change_bgc_menu(event)">終極密碼</div>
                         <div class="menu_btn" id="menu_pss" onclick="showDiv('_pss');close_overlay();change_bgc_menu(event)">剪刀石頭布</div>
-                        <div class="menu_btn" id="menu_bricks" onclick="showDiv('_bricks');close_overlay();change_bgc_menu(event)">打磚塊</div>
                     </div>
                     
                 </div>
@@ -180,42 +174,39 @@
                     </div>
                 </div>
 
-                 <!-- memory -->
-                 <div id="div_memory" class="hidden">
-                    <div class="game_info">
-                        <div class="title">記憶力大考驗－遊戲說明</div>
-                        
-                    </div>
-                 </div>
 
                   <!-- pss -->
                 <div id="div_pss" class="hidden">
                     <div class="container_pss">
                         <div class="battle">
                             <div class="athlete">
-                                <img src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png" id="computer_gesture">
+                                <div id="computer_gesture">
+                                    <img class="gesture_img" src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png">
+                                </div>
                                 <div class="name">computer</div>
                             </div>
                             <div class="athlete">
-                                <img src="https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png" id="user_gesture">
+                                <div id="user_gesture">
+                                    <img class="gesture_img" src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png">
+                                </div>
                                 <div class="name">you</div>
                             </div>
-                            <!-- <div class="result_pss">YOU LOST!</div> -->
                         </div>
                         <div class="gesture">
                             <p style="font-size: 20px;margin-top: 10px;">請點選此變換你的拳！</p>
-                            <img src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png">
-                            <img src="https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png">
-                            <img src="https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png">
+                            <img class="gesture_img" src="https://2.bp.blogspot.com/-VhlO-Yfjy_E/Uab3z3RNJQI/AAAAAAAAUVg/fX8VnSVDlWs/s800/janken_gu.png" onclick="choice(this)" id="rock">
+                            <img class="gesture_img" src="https://4.bp.blogspot.com/-__yEIXe5SxU/Uab3zO7BB2I/AAAAAAAAUVI/MYg6TVeiv-Y/s800/janken_choki.png" onclick="choice(this)" id="scissor">
+                            <img class="gesture_img" src="https://3.bp.blogspot.com/-qZtyoue9xKs/Uab30IG0Q5I/AAAAAAAAUVk/qnH8a2OgrvI/s800/janken_pa.png" onclick="choice(this)" id="paper">
                         </div>
                         <div class="game_ratio">
-                            <div class="ratio_title">這一局勝負為</div>
-                            <p class="result_match">You Lost!</p>
                             <div class="ratio_title">目前比數為</div>
-                            <div class="ratio_layout">2:2</div>
+                            <div class="ratio_layout">
+                                <div id="ratio"></div>
+                                <p id="result_match"></p>
+                            </div>
                         </div>
-                        <div class="other_btn">
-                            
+                        <div class="restart">
+                            <div class="restart_btn" onclick="restart()">重新遊戲</div>
                         </div>
                     </div>
                 </div>

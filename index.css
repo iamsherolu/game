@@ -314,7 +314,7 @@ button{
 }
 .game_ratio{
     text-align: center;
-    margin: 10px;
+    margin: 0px;
     padding: 20px;
     font-family: 'Marhey', sans-serif;
 }
@@ -323,16 +323,15 @@ button{
     text-align: center;
 }
 .gesture{
-    margin: 10px;
+    margin: 0px;
     text-align: center;
-    padding: 35px 20px;
 }
 .container_pss{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     max-width: 1000px;
-    margin: 120px auto;
+    margin: 100px auto;
 }
 .battle img{
     width: 50%;
@@ -341,14 +340,23 @@ button{
     width: 15%;
     cursor: pointer;
     margin: 20px;
+    opacity: 0.5;
+}
+.gesture img:hover{
+    opacity: 1;
+}
+.gesture img .clicked{
+    opacity: 1;
 }
 .ratio_layout{
     background-color: green;
     border: 10px solid brown;
     box-shadow: 5px 5px 3px gray;
     color: white;
-    font-size: 50px;
     text-align: center;
+}
+#ratio{
+    font-size: 50px;
 }
 .result_pss{
     font-family: 'Marhey', sans-serif;
@@ -364,8 +372,20 @@ button{
     margin-top: 20px;
     font-size: 22px;
 }
-.result_match{
-    color: green;
+#result_match{
+    color: snow;
+    font-size: 20px;
+}
+.restart_btn{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #AD5A5A;
+    border: 5px solid #faead3;
+    color: snow;
+    text-align: center;
+    width: 200px;
+    margin: 0px auto;
+    cursor: pointer;
 }
 
 
