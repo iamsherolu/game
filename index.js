@@ -279,3 +279,52 @@ function restart(){
     computer_ratio=0;
     ratio.innerText=computer_ratio+':'+user_ratio;
 }
+
+// 記憶力大考驗
+const pictures=[
+    'https://1.bp.blogspot.com/-uoAUokNUGJc/XxU0v2S47gI/AAAAAAABaPs/1rFMl76-f6M7PuSG77mOWAwKrjmt0e5dACNcBGAsYHQ/s1600/yumekawa_bird1_red.png',
+    'https://1.bp.blogspot.com/-uoAUokNUGJc/XxU0v2S47gI/AAAAAAABaPs/1rFMl76-f6M7PuSG77mOWAwKrjmt0e5dACNcBGAsYHQ/s1600/yumekawa_bird1_red.png',
+    'https://1.bp.blogspot.com/-rbsE_u7VcbQ/XxU0wpaZZOI/AAAAAAABaP4/fWrtq1wo9QM7s1t4fyXpuza5f7LUqHpZQCNcBGAsYHQ/s1600/yumekawa_bird4_blue.png',
+    'https://1.bp.blogspot.com/-rbsE_u7VcbQ/XxU0wpaZZOI/AAAAAAABaP4/fWrtq1wo9QM7s1t4fyXpuza5f7LUqHpZQCNcBGAsYHQ/s1600/yumekawa_bird4_blue.png',
+    'https://1.bp.blogspot.com/-yMpJyA42TwY/XxU0xCLTNcI/AAAAAAABaP8/SuCP0NYBRnwmBxG44JxeujVYoEZ9s8oVgCNcBGAsYHQ/s1600/yumekawa_bird5_purple.png',
+    'https://1.bp.blogspot.com/-yMpJyA42TwY/XxU0xCLTNcI/AAAAAAABaP8/SuCP0NYBRnwmBxG44JxeujVYoEZ9s8oVgCNcBGAsYHQ/s1600/yumekawa_bird5_purple.png',
+    'https://1.bp.blogspot.com/-OgXsWbsTn9g/XxU0wA1LnGI/AAAAAAABaPw/QxfmUXAlwVkPo1tdOku4EZRJyioUzemKQCNcBGAsYHQ/s1600/yumekawa_bird2_white.png',
+    'https://1.bp.blogspot.com/-OgXsWbsTn9g/XxU0wA1LnGI/AAAAAAABaPw/QxfmUXAlwVkPo1tdOku4EZRJyioUzemKQCNcBGAsYHQ/s1600/yumekawa_bird2_white.png',
+    'https://1.bp.blogspot.com/-6KA4b6Yzqs4/XxU0wWckoII/AAAAAAABaP0/NL2sOUXPehc9-wGizN5CDwo4muGkvidCACNcBGAsYHQ/s1600/yumekawa_bird3_green.png',
+    'https://1.bp.blogspot.com/-6KA4b6Yzqs4/XxU0wWckoII/AAAAAAABaP0/NL2sOUXPehc9-wGizN5CDwo4muGkvidCACNcBGAsYHQ/s1600/yumekawa_bird3_green.png',
+    'https://1.bp.blogspot.com/-f0UimUR1SVc/XxU0xHkiHLI/AAAAAAABaQA/r3HwmWx-4pMU70JyraGyv1Hycd-BVF4RQCNcBGAsYHQ/s1600/yumekawa_bird6_yellow.png',
+    'https://1.bp.blogspot.com/-f0UimUR1SVc/XxU0xHkiHLI/AAAAAAABaQA/r3HwmWx-4pMU70JyraGyv1Hycd-BVF4RQCNcBGAsYHQ/s1600/yumekawa_bird6_yellow.png',
+    'https://1.bp.blogspot.com/-Jh6Y6hylvC4/XxU0x55zxPI/AAAAAAABaQI/Ku60i_RAJMcF7lyaAasjQ3vSEPgQGNKtACNcBGAsYHQ/s1600/yumekawa_bird8_gray.png',
+    'https://1.bp.blogspot.com/-Jh6Y6hylvC4/XxU0x55zxPI/AAAAAAABaQI/Ku60i_RAJMcF7lyaAasjQ3vSEPgQGNKtACNcBGAsYHQ/s1600/yumekawa_bird8_gray.png',
+    'https://1.bp.blogspot.com/-wZxFVGzr26c/XxU0xrRse6I/AAAAAAABaQE/OA3agR8Pk1k0vh2Q2Wd-V-8Ubbdd8y6tQCNcBGAsYHQ/s1600/yumekawa_bird7_orange.png',
+    'https://1.bp.blogspot.com/-wZxFVGzr26c/XxU0xrRse6I/AAAAAAABaQE/OA3agR8Pk1k0vh2Q2Wd-V-8Ubbdd8y6tQCNcBGAsYHQ/s1600/yumekawa_bird7_orange.png',
+    
+];
+
+var pic=pictures.sort(() => (Math.random() >.5) ? 2: -1);
+
+for(i=0;i<pictures.length;i++){
+    let box=document.createElement('div')
+    box.className='item';
+
+    const img = document.createElement('img');
+    img.src = pic[i];
+    box.appendChild(img);
+    img.width = '60';
+    img.height = '60';
+
+    box.onclick=function(){
+        this.classList.add('open')
+        setTimeout(function(){
+
+            if(document.querySelectorAll('.open').length >1){
+                if(document.querySelectorAll('.open')[0].innerHTML==document.querySelectorAll('.open')[1].innerHTML){
+                    
+                }
+            }
+
+        },500)
+    }
+
+    document.querySelector('.game_board').appendChild(box);
+}
