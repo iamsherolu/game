@@ -1,0 +1,11 @@
+<ul>
+  <li>
+    內含三個小遊戲：剪刀石頭布、記憶力大考驗、終極密碼
+  </li>
+  <li>
+    以HMTL、CSS以及JavaScript完成之
+  </li>
+  <li>
+    頁面排版係運用bootstrap以及flexbox等完成之響應式網頁
+  </li>
+</ul>
